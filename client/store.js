@@ -2,7 +2,7 @@ import { createBrowserHistory } from 'history';
 import { applyMiddleware, createStore, compose } from 'redux';
 import { routerMiddleware } from 'connected-react-router';
 
-import rootReducer from './reducers';
+import createRootReducer from './reducers';
 
 import comments from './data/comments';
 import posts from './data/posts';
@@ -12,11 +12,10 @@ const defaultState = {
   comments,
 };
 
-const history = createBrowserHistory();
+export const history = createBrowserHistory();
 
 const store = createStore(
   createRootReducer(history),
-  rootReducer,
   defaultState,
   compose(
     applyMiddleware(

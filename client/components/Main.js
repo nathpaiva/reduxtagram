@@ -1,18 +1,19 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { ConnectedRouter } from 'connected-react-router';
+import { Route, Switch } from 'react-router';
 
 import PhotoGrid from './PhotoGrid';
 import Single from './Single';
 
-const Main = () => (
+const Main = ({ history }) => (
   <main>
     <h1>Reduxtagram</h1>
-    <Router>
+    <ConnectedRouter history={history}>
       <Switch>
         <Route path="/" exact component={PhotoGrid} />
         <Route path="/view/:postId" component={Single} />
       </Switch>
-    </Router>
+    </ConnectedRouter>
   </main>
 );
 
