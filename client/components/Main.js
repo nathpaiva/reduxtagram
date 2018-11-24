@@ -5,16 +5,19 @@ import { Route, Switch } from 'react-router';
 import PhotoGrid from './PhotoGrid';
 import Single from './Single';
 
-const Main = ({ history }) => (
-  <main>
-    <h1>Reduxtagram</h1>
-    <ConnectedRouter history={history}>
+const Main = ({ history, posts }) => (
+  <ConnectedRouter history={history}>
+    <main>
+      <h1>Reduxtagram</h1>
+      {console.log("AQUI...🥰", posts)}
+
+
       <Switch>
-        <Route path="/" exact component={PhotoGrid} />
+        <Route path="/" exact render={() => <PhotoGrid posts={posts} />} />
         <Route path="/view/:postId" component={Single} />
       </Switch>
-    </ConnectedRouter>
-  </main>
+    </main>
+  </ConnectedRouter>
 );
 
 export default Main;

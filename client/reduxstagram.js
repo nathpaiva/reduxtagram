@@ -8,10 +8,10 @@ import store, { history } from './store';
 import './styles/style.styl';
 
 // Import components
-import Main from './components/Main';
+import App from './App';
 
 render((
   <Provider store={store}>
-    <Main history={history} />
+    <App history={history} />
   </Provider>
 ), document.querySelector('[data-js="app"]'));
