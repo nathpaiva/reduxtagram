@@ -8,7 +8,7 @@ class PhotoGrid extends PureComponent {
 
     return (
       <div className="photo-grid">
-        {posts.map((post) => <Photo key={post.code} {...this.props} post={post} />)}
+        {posts.map((post, i) => <Photo key={post.code} i={i} {...this.props} post={post} />)}
       </div>
     )
   }
