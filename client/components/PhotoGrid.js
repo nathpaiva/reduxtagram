@@ -1,10 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Photo from './Photo';
 
-class PhotoGrid extends Component {
-  constructor(props) {
-    super(props);
-  }
+class PhotoGrid extends PureComponent {
 
   render() {
     const { posts } = this.props;
