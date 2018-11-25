@@ -1,17 +1,18 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'connected-react-router';
 import { render } from 'react-dom';
 
 import store, { history } from './store';
 
-// Import css
 import './styles/style.styl';
 
-// Import components
 import App from './App';
 
 render((
   <Provider store={store}>
-    <App history={history} />
+    <ConnectedRouter history={history}>
+      <App />
+    </ConnectedRouter>
   </Provider>
 ), document.querySelector('[data-js="app"]'));
