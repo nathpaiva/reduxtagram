@@ -1,5 +1,21 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
+import Photo from './Photo'
+import Comments from './Comments';
 
-const Single = () => <div className="single-grid">I'm the single</div>;
+class Single extends PureComponent {
+
+  render() {
+    const { posts, match } = this.props;
+    const i = posts.findIndex((post) => post.code == match.params.postId);
+    const post = posts[i];
+
+    return (
+      <div className="single-photo">
+        <Photo key={post.code} i={i} {...this.props} post={post} />
+        <Comments />
+      </div>
+    );
+  }
+}
 
 export default Single;

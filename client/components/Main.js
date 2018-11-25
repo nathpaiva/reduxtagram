@@ -12,7 +12,10 @@ class Main extends PureComponent {
         <h1><Link to="/">Reduxtagram</Link></h1>
         <Switch>
           <Route path="/" exact render={() => <PhotoGrid {...this.props} />} />
-          <Route path="/view/:postId" component={Single} />
+          <Route path="/view/:postId" render={(props) => {
+            const propsSingle = Object.assign({}, this.props, props);
+            return <Single {...propsSingle} />
+          }} />
         </Switch>
       </main>
     );
