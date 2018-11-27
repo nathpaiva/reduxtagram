@@ -18,6 +18,7 @@
   "license": "MIT",
   "homepage": "https://github.com/nathpaiva/reduxtagram",
   "dependencies": {
+    "@sentry/browser": "^4.4.0",
     "babel-core": "^6.7.7",
     "babel-eslint": "^6.0.4",
     "babel-loader": "^6.2.4",
@@ -34,7 +35,6 @@
     "eslint-plugin-react": "^5.0.1",
     "express": "^4.13.4",
     "history": "^4.7.2",
-    "raven-js": "^2.3.0",
     "react": "^16.6.3",
     "react-addons-css-transition-group": "^15.0.2",
     "react-dom": "^16.6.3",
